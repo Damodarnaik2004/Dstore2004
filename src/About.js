@@ -4,12 +4,10 @@ import HeroSection from './components/HeroSection';
 import { useProductContext } from './context/ProductContext';
 const About = () => {
   
-  const {myName}=useProductContext();
-
   const name='Dstore Ecommers'
   return (
     <Wrapper className='test'>
-      {myName}
+      
       <HeroSection name={name}/>
     </Wrapper>
   )
