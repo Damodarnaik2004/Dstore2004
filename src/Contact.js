@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+const auth = localStorage.getItem('user');
 const Contact = () => {
   return (
     <Wrapper>
@@ -8,13 +9,14 @@ const Contact = () => {
 
        <div className="container">
         <div className="contact-form">
+            
           <form action='https://formspree.io/f/xwkdpano' method='post' className='contact-inputs'>
             <input type='text'
                    name='UserName'
                    placeholder='username'
                    required
                    autoComplete='off'
-                   value=""
+                   value={`Name :  ${JSON.parse(auth).username}`}
                    /// here for third party apps like form doest need attribute of value 
                    /// it can work with name variable also
                    />
@@ -23,7 +25,7 @@ const Contact = () => {
                    placeholder='email'
                    autoComplete='off'
                    required
-                   value=""
+                   value={`Email :  ${JSON.parse(auth).email}`}
                    />
             <textarea name='Message'
                       cols='30'
